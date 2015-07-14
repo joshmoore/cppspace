@@ -18,6 +18,14 @@ centos7:
         - ./ccache:/home/build/.ccache
     command: /tools/build.sh
 
+ubuntu1504:
+    build: ubuntu1504/
+    volumes:
+        - ./src:/src
+        - ./bin:/tools
+        - ./ccache:/home/build/.ccache
+    command: /tools/build.sh
+
 ubuntu1510:
     build: ubuntu1510/
     volumes:
