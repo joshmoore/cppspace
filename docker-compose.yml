@@ -1,0 +1,19 @@
+centos6:
+    build: centos6/
+    volumes:
+        - ./src:/src
+        - ./bin:/tools
+        - ./ccache:/home/build/.ccache
+    command: /tools/build.sh
+    environment:
+        - BOOST_ROOT=/usr/local/boost157
+        - CXXFLAGS=-I/usr/local/boost157/include
+        - LDFLAGS=-L/usr/local/boost157/lib
+
+centos7:
+    build: centos7/
+    volumes:
+        - ./src:/src
+        - ./bin:/tools
+        - ./ccache:/home/build/.ccache
+    command: /tools/build.sh
