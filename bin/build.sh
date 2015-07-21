@@ -5,6 +5,6 @@ set -u
 set -x
 
 export PATH=/usr/lib/ccache:$PATH
-cmake /src
+cmake /src "$@"
 make
 ctest

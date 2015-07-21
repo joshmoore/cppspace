@@ -33,3 +33,11 @@ ubuntu1510:
         - ./bin:/tools
         - ./ccache:/home/build/.ccache
     command: /tools/build.sh
+
+ubuntu1510sb:
+    build: ubuntu1510sb/
+    volumes:
+        - ./src:/src
+        - ./bin:/tools
+        - ./ccache:/home/build/.ccache
+    command: /tools/build.sh -Dbioformats-superbuild=ON
