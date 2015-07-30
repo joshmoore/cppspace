@@ -41,3 +41,11 @@ ubuntu1510sb:
         - ./bin:/tools
         - ./ccache:/home/build/.ccache
     command: /tools/build.sh -Dbioformats-superbuild=ON
+
+wheezygcc493:
+    build: wheezygcc493/
+    volumes:
+        - ./src:/src
+        - ./bin:/tools
+        - ./ccache:/home/build/.ccache
+    command: /tools/build.sh
