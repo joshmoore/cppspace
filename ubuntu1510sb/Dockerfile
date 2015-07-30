@@ -8,6 +8,7 @@ RUN apt-get install -y \
     git
 
 RUN apt-get install -y ccache
+RUN apt-get install -y python
 
 RUN adduser build
 USER build
