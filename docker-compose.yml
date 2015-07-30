@@ -1,51 +1,40 @@
 centos6:
+    extends:
+        file: base.yml
+        service: build
     build: centos6/
-    volumes:
-        - ./src:/src
-        - ./bin:/tools
-        - ./ccache:/home/build/.ccache
-    command: /tools/build.sh
     environment:
         - BOOST_ROOT=/usr/local/boost157
         - CXXFLAGS=-I/usr/local/boost157/include
         - LDFLAGS=-L/usr/local/boost157/lib
 
 centos7:
+    extends:
+        file: base.yml
+        service: build
     build: centos7/
-    volumes:
-        - ./src:/src
-        - ./bin:/tools
-        - ./ccache:/home/build/.ccache
-    command: /tools/build.sh
 
 ubuntu1504:
+    extends:
+        file: base.yml
+        service: build
     build: ubuntu1504/
-    volumes:
-        - ./src:/src
-        - ./bin:/tools
-        - ./ccache:/home/build/.ccache
-    command: /tools/build.sh
 
 ubuntu1510:
+    extends:
+        file: base.yml
+        service: build
     build: ubuntu1510/
-    volumes:
-        - ./src:/src
-        - ./bin:/tools
-        - ./ccache:/home/build/.ccache
-    command: /tools/build.sh
 
 ubuntu1510sb:
+    extends:
+        file: base.yml
+        service: build
     build: ubuntu1510sb/
-    volumes:
-        - ./src:/src
-        - ./bin:/tools
-        - ./ccache:/home/build/.ccache
     command: /tools/build.sh -Dbioformats-superbuild=ON
 
 wheezygcc493:
+    extends:
+        file: base.yml
+        service: build
     build: wheezygcc493/
-    volumes:
-        - ./src:/src
-        - ./bin:/tools
-        - ./ccache:/home/build/.ccache
-    command: /tools/build.sh

@@ -1,0 +1,6 @@
+build:
+    volumes:
+        - ./src:/src
+        - ./bin:/tools
+        - ./ccache:/home/build/.ccache
+    command: time /tools/build.sh
